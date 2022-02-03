@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaboratoryMobileApp.Pages.EditUserPage" Title="Изменить данные">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout BackgroundColor="Transparent" x:Name="EditScreen">
+            <ScrollView VerticalOptions="FillAndExpand">
+                <Frame Padding="5" Margin="8" CornerRadius="10">
+
+                    <StackLayout>
+                        <Label TextColor="#20917D" Text="Контакты" FontSize="20" HorizontalOptions="Start" Margin="5"/>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Email" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                            <Entry  HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" Keyboard="Email" ReturnType="Next" x:Name="EntryEmail" MaxLength="50"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                                <Label Text="Номер телефона" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                            <Entry  HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" Keyboard="Telephone" ReturnType="Next" x:Name="EntryPhoneNumber" MaxLength="20"/>
+                        </StackLayout>
+
+
+                        <StackLayout Orientation="Horizontal">
+                                <Label TextColor="#20917D" Text="Сменить пароль" FontSize="20" HorizontalOptions="Center" Margin="5" />
+                            <CheckBox x:Name="CBoxEditPassword" CheckedChanged="CBoxEditPhoneNumber_CheckedChanged" VerticalOptions="Center" />
+                        </StackLayout>
+
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Старый пароль" FontSize="20" Margin="5" VerticalOptions="Center" x:Name="LabelOldPassword"/>
+                                <Entry  HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Next" x:Name="EntryOldPassword" MaxLength="100" IsPassword="True"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Новый пароль" FontSize="20" Margin="5" VerticalOptions="Center" x:Name="LabelNewPassword"/>
+                                <Entry  HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Next" x:Name="EntryNewPassword" MaxLength="100" IsPassword="True"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Повторите пароль" FontSize="20" Margin="5" VerticalOptions="Center" x:Name="LabelRePassword"/>
+                                <Entry  HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Go" x:Name="EntryRePassword" MaxLength="100" IsPassword="True"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+                </Frame>
+            </ScrollView>
+            <Button Text="Сохранить" x:Name="BtnSave" VerticalOptions="EndAndExpand" Clicked="BtnSave_Clicked"/>
+        </StackLayout>
+            <Grid BackgroundColor="White" x:Name="LoadingScreen" IsVisible="False">
+                <ActivityIndicator VerticalOptions="Center" HorizontalOptions="Center" IsRunning="True"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

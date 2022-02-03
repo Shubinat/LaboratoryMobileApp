@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaboratoryMobileApp.Pages.NewsPage" Title="Новости" IconImageSource="news_icon.png" Appearing="ContentPage_Appearing">
+    <ContentPage.Content>
+        <ListView x:Name="LVNews" SeparatorVisibility="None" HasUnevenRows="True" SelectionMode="None" IsRefreshing="True" Refreshing="LVNews_Refreshing" IsPullToRefreshEnabled="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="5" Margin="5">
+                            <StackLayout HorizontalOptions="Start">
+                                <Label Text="{Binding Title}" TextColor="Black" FontSize="20"/>
+                                <Label Text="{Binding Description}" FontSize="16" Margin="0,5"/>
+                                <Label Text="{Binding CreatingDateText}" HorizontalOptions="Start" FontSize="12"/>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

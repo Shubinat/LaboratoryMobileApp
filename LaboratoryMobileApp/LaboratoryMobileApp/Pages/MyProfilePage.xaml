@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaboratoryMobileApp.Pages.MyProfilePage" NavigationPage.HasNavigationBar="False" Title="Профиль" Appearing="ContentPage_Appearing">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout>
+                <Grid VerticalOptions="Start">
+                    <StackLayout BackgroundColor="#20917D" Padding="0,50,0,25" HeightRequest="500">
+                        <Frame BackgroundColor="White" HorizontalOptions="Center" WidthRequest="100"
+                       HeightRequest="100" CornerRadius="100" Padding="10" Margin="0,0,0,20">
+                            <Image Source="person_icon.png" HeightRequest="100" WidthRequest="100" />
+                        </Frame>
+                        <Label Text="{Binding FullName}" TextColor="White" HorizontalOptions="Center"
+                       FontSize="24" FontAttributes="Bold" />
+                    </StackLayout>
+                    <ImageButton Source="exit_icon.png" HorizontalOptions="Start" VerticalOptions="Start" x:Name="BtnReLogin" Clicked="BtnReLogin_Clicked"/>
+                    <ImageButton Source="edit_icon.png" HorizontalOptions="End" VerticalOptions="Start"  x:Name="BtnEditProfile" Clicked="BtnEditProfile_Clicked"/>
+                </Grid>
+
+                <ListView x:Name="LVServices" SeparatorVisibility="None" HasUnevenRows="True" 
+                          SelectionMode="None" IsRefreshing="True" IsPullToRefreshEnabled="True" 
+                          Refreshing="LVServices_Refreshing" Margin="10" ItemTapped="LVServices_ItemTapped">
+                    <ListView.Header>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Список ваших услуг: " TextColor="Black" />
+                        </StackLayout>
+                    </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                <Grid Padding="5">
+                                    <StackLayout HorizontalOptions="Start">
+                                         <Label Text="{Binding Service.Name}" TextColor="Black"/>
+                                        <Label Text="{Binding Service.ShortDescription}" />
+                                        </StackLayout>
+                                    <StackLayout HorizontalOptions="End">
+                                        <Label Text="{Binding Service.Price}" TextColor="Black" HorizontalOptions="End"/>
+                                        <Label Text="{Binding DateText}" />
+                                    </StackLayout>
+                                </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+            </StackLayout>
+            <Button Text="+" CornerRadius="100" HorizontalOptions="End" VerticalOptions="End" Margin="20" FontSize="34" WidthRequest="70" HeightRequest="70" x:Name="BtnAddService" Clicked="BtnAddService_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

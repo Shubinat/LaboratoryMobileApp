@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaboratoryMobileApp.Pages.AddUserServicePage" Title="Записаться на новую услугу" Appearing="ContentPage_Appearing">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout Margin="8" x:Name="ServiceScreen" IsVisible="False" IsEnabled="False">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Услуга:" Margin="5" VerticalOptions="Center" FontSize="20"/>
+                    <Picker Margin="5" VerticalOptions="Center" x:Name="PickerServices" HorizontalOptions="FillAndExpand" 
+                        FontSize="20" WidthRequest="200" SelectedIndexChanged="PickerServices_SelectedIndexChanged" 
+                        ItemDisplayBinding="{Binding Name}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                    <Label Text="Описание:" Margin="5,10" VerticalOptions="Start" FontSize="20"/>
+                    <Editor Margin="5"  x:Name="EditorDescription" FontSize="20" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" WidthRequest="200" IsReadOnly="True"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Стоимость:" Margin="5" VerticalOptions="Center" FontSize="20"/>
+                    <Editor Margin="5" VerticalOptions="Center" x:Name="EditorPrice" FontSize="20" HorizontalOptions="FillAndExpand" WidthRequest="200" IsReadOnly="True"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Дата записи:" Margin="5" VerticalOptions="Center" FontSize="20"/>
+                    <DatePicker Margin="5" VerticalOptions="Center" x:Name="DPickerServiceDate" FontSize="20" HorizontalOptions="FillAndExpand" WidthRequest="200"/>
+                </StackLayout>
+                <Button VerticalOptions="EndAndExpand" Text="Записаться" x:Name="BtnAddUserService" Clicked="BtnAddUserService_Clicked"/>
+            </StackLayout>
+            
+            <Grid BackgroundColor="White" x:Name="LoadingScreen" IsVisible="True">
+                <ActivityIndicator VerticalOptions="Center" HorizontalOptions="Center" IsRunning="True"/>
+            </Grid>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

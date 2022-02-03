@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaboratoryMobileApp.Pages.RegistrationPage" Title="Регистрация" >
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout BackgroundColor="Transparent" x:Name="RegScreen">
+            <ScrollView>
+                    <Frame>
+                        <StackLayout>
+                        <StackLayout Margin="0,0,0,10">
+                                <Label Text="Паспортные данные" Style="{StaticResource Title}"/>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Фамилия" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                                <Entry HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Next" x:Name="EntrySurname" MaxLength="50"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Имя" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                                    <Entry HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Next" x:Name="EntryName" MaxLength="50"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Отчество" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                                    <Entry HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Next" x:Name="EntryPatronimyc" MaxLength="50"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Серия паспорта" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                                    <Entry HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Next" Keyboard="Numeric" x:Name="EntryPassportSeria" MaxLength="4"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Номер паспорта" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                                    <Entry HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Next" Keyboard="Numeric" x:Name="EntryPassportNumber" MaxLength="6"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Дата рождения:" FontSize="20" Margin="5"/>
+                                    <DatePicker FontSize="20" HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" x:Name="DPickerBirthDate"/>
+                            </StackLayout>
+
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Номер полиса" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                                    <Entry HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Next" x:Name="EntryPolicyNumber" MaxLength="50"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Margin="0,0,0,10">
+                                <Label Text="Контакты" Style="{StaticResource Title}"/>
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Номер телефона" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                                    <Entry HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Next" Keyboard="Telephone" x:Name="EntryPhoneNumber" MaxLength="20"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Email" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                                    <Entry HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Next" Keyboard="Email" x:Name="EntryEmail" MaxLength="50"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Margin="0,0,0,10">
+                                <Label Text="Данные для входа" Style="{StaticResource Title}"/>
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Логин" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                                    <Entry HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" ReturnType="Next" x:Name="EntryLogin" MaxLength="100"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Пароль" FontSize="20" Margin="5" VerticalOptions="Center"/>
+                                    <Entry HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" IsPassword="True" ReturnType="Next" x:Name="EntryPassword" MaxLength="100"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Повторите пароль" FontSize="20" Margin="5" VerticalOptions="Center" />
+                                    <Entry HorizontalOptions="EndAndExpand" WidthRequest="250" VerticalOptions="Center" IsPassword="True" ReturnType="Go" x:Name="EntryRePassword"/>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </Frame>
+            </ScrollView>
+            <Button Text="Регистрация" x:Name="BtnRegistration" Clicked="BtnRegistration_Clicked"/>
+        </StackLayout>
+            <Grid BackgroundColor="White" x:Name="LoadingScreen" IsVisible="False">
+                <ActivityIndicator VerticalOptions="Center" HorizontalOptions="Center" IsRunning="True"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

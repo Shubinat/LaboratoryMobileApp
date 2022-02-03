@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaboratoryMobileApp.Pages.ServicesPage" Title="Сервисы" IconImageSource="services_icon.png" Appearing="ContentPage_Appearing">
+    <ContentPage.Content>
+        <ListView x:Name="LVServices" SeparatorVisibility="None" HasUnevenRows="True" SelectionMode="None" IsRefreshing="True" IsPullToRefreshEnabled="True" Refreshing="LVServices_Refreshing" ItemTapped="LVServices_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5">
+                            <StackLayout HorizontalOptions="Start">
+                                <Label Text="{Binding Name}" TextColor="Black" FontSize="20"/>
+                                <Label Text="{Binding ShortDescription}" FontSize="16"/>
+                            </StackLayout>
+                            <Label Text="{Binding Price}" HorizontalOptions="End" FontSize="16"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LaboratoryMobileApp.App">
+    <Application.Resources>
+        <SolidColorBrush Color="#20917D" x:Key="ColorPrimary"></SolidColorBrush>
+        <SolidColorBrush Color="#1D8C70" x:Key="ColorPrimaryDark"></SolidColorBrush>
+        <SolidColorBrush Color="#169154" x:Key="ColorAccent"></SolidColorBrush>
+        <SolidColorBrush Color="#FF4F4F" x:Key="ColorPrimaryRed"></SolidColorBrush>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{StaticResource ColorPrimaryRed}"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+        <Style TargetType="{x:Type Entry}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="WidthRequest" Value="300"/>
+        </Style>
+
+        <Style TargetType="{x:Type ImageButton}">
+            <Setter Property="Margin" Value="8"/>
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="CornerRadius" Value="50" />
+            <Setter Property="WidthRequest" Value="45"/>
+        </Style>
+
+        <Style TargetType="{x:Type Frame}">
+            <Setter Property="Margin" Value="8"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Background" Value="White" />
+        </Style>
+
+        <Style TargetType="{x:Type Label}" x:Key="Title">
+            <Setter Property="TextColor"  Value="#20917D"/>
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontSize" Value="24" />
+        </Style>
+        <Style TargetType="{x:Type Label}" >
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+    </Application.Resources>
+</Application>
